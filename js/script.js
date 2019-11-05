@@ -2,18 +2,18 @@ $( "document" ).ready(function() { //this helps your jQuery to work. Write all o
 
     $("#button").click(function(){
         let input = $(".input").val();
+        var vowels = [ 'a', 'e', 'i', 'o', 'u' ];
+        let letterOne = input[0];
 
-        let res = input[0] + "ay";
-        let restwo = input - input[0];
-        let final = restwo + res;
-        $(".output").html(res);
+        if (vowels.indexOf(letterOne) > -1) {
+		let final= input + 'ay';
+        $(".output").html(final);
+	} else {
+		let final = input.slice(1) + letterOne + 'ay';
+        $(".output").html(final);
+    }
+
+
+
     });
-
-    console.log(input)
-
-
-
-
-
-
 });
